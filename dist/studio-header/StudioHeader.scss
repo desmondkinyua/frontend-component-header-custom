@@ -18,13 +18,13 @@ $white: #FFFFFF;
     box-sizing: content-box;
     position: relative;
     top: -.05em;
-    height: 4.75rem;
+    height: 4.0rem;
     padding: var(--pgn-spacing-spacer-base, $spacer) 0;
     margin-right: var(--pgn-spacing-spacer-base, $spacer);
 
     img {
       display: block;
-      height: 4.5rem !important;
+      height: 3.75rem !important;
       width: auto;
     }
   }
