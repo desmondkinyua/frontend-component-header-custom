@@ -1,7 +1,6 @@
 $spacer: 1rem;
 $white: #fff;
-$component-active-bg: #1E5F73FF !default;
-$component-active-color: $white !default;
+$header-bg: #1E5F73FF !default;
 $rounded-pill: 50rem  !default;
 
 @import './Menu/menu.scss';
@@ -72,10 +71,17 @@ $rounded-pill: 50rem  !default;
 
 .site-header-mobile {
   height: 3rem;
+  background: var(--pgn-color-primary-base, $header-bg);
+  color: #fff;
 
   .nav-link {
     text-decoration: none;
     cursor: pointer;
+    color: #fff;
+  }
+
+  .icon-button {
+    color: #fff;
   }
 
   img {
@@ -86,10 +92,22 @@ $rounded-pill: 50rem  !default;
 
 .site-header-desktop {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, .1);
-  background: var(--pgn-color-white, $white);
+  background: var(--pgn-color-primary-base, $header-bg);
 
   .nav-link {
     text-decoration: none;
+    color: #fff;
+  }
+
+  // Both a regular and a white logo variant are rendered together so the site
+  // can swap them for the light/dark theme toggle; the header bar is now
+  // always the teal brand color, so always show the white one here.
+  .logo-image:not(.logo-white) {
+    display: none;
+  }
+
+  .logo-image.logo-white {
+    display: block;
   }
 
   .logo {
@@ -107,13 +125,31 @@ $rounded-pill: 50rem  !default;
       width: auto;
     }
   }
+
+  // Account menu toggle renders as an outline-primary button; on a teal bar
+  // a teal border/text would be invisible, so switch it to a white outline.
+  // Hover/focus is pinned back to Paragon's own light-fill/dark-text combo
+  // explicitly, since this rule and Paragon's :hover rule share specificity.
+  .btn-outline-primary {
+    color: #fff;
+    border-color: rgba(255, 255, 255, .6);
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: var(--pgn-color-theme-hover-primary);
+      border-color: var(--pgn-color-theme-hover-primary);
+      background: var(--pgn-color-primary-100);
+    }
+  }
+
   .secondary-menu-container {
     .nav-link:hover,
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: var(--pgn-color-bg-active, $component-active-bg);
-      color: var(--pgn-color-active, $component-active-color);
+      background: rgba(255, 255, 255, .16);
+      color: #fff;
     }
   }
   .main-nav {
@@ -128,8 +164,8 @@ $rounded-pill: 50rem  !default;
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: var(--pgn-color-bg-active, $component-active-bg);
-      color: var(--pgn-color-active, $component-active-color);
+      background: rgba(255, 255, 255, .16);
+      color: #fff;
     }
 
     .menu {
