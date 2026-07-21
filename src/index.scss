@@ -126,21 +126,15 @@ $rounded-pill: 50rem  !default;
     }
   }
 
-  // Account menu toggle renders as an outline-primary button; on a teal bar
-  // a teal border/text would be invisible, so switch it to a white outline.
-  // Hover/focus is pinned back to Paragon's own light-fill/dark-text combo
-  // explicitly, since this rule and Paragon's :hover rule share specificity.
+  // Account menu toggle renders as an outline-primary button. Paragon's
+  // outline-primary color is a dark amber tuned for contrast against a white
+  // background, which would be hard to read against this teal bar - use the
+  // brighter base amber here instead. No hover override needed: Paragon's
+  // hover state fills with an opaque light tint plus dark text, which stays
+  // legible regardless of what's behind it.
   .btn-outline-primary {
-    color: #fff;
-    border-color: rgba(255, 255, 255, .6);
-
-    &:hover,
-    &:focus,
-    &:active {
-      color: var(--pgn-color-theme-hover-primary);
-      border-color: var(--pgn-color-theme-hover-primary);
-      background: var(--pgn-color-primary-100);
-    }
+    color: #FFB400;
+    border-color: #FFB400;
   }
 
   .secondary-menu-container {
