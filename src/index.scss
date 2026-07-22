@@ -77,7 +77,7 @@ $rounded-pill: 50rem  !default;
   .nav-link {
     text-decoration: none;
     cursor: pointer;
-    color: #fff;
+    color: #fff !important;
   }
 
   .icon-button {
@@ -96,7 +96,7 @@ $rounded-pill: 50rem  !default;
 
   .nav-link {
     text-decoration: none;
-    color: #fff;
+    color: #fff !important;
   }
 
   // Both a regular and a white logo variant are rendered together so the site
@@ -142,8 +142,8 @@ $rounded-pill: 50rem  !default;
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: rgba(255, 255, 255, .16);
-      color: #fff;
+      background: rgba(255, 255, 255, .16) !important;
+      color: #FFB400 !important;
     }
   }
   .main-nav {
@@ -158,8 +158,8 @@ $rounded-pill: 50rem  !default;
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: rgba(255, 255, 255, .16);
-      color: #fff;
+      background: rgba(255, 255, 255, .16) !important;
+      color: #FFB400 !important;
     }
 
     .menu {
