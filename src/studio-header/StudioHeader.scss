@@ -7,10 +7,19 @@ $white: #FFFFFF;
 
   height: 5rem;
   box-shadow: 0 1px 0 0 rgb(0 0 0 / .1);
-  background: var(--pgn-color-white, $white);
+  background: var(--pgn-color-primary-base, $header-bg);
 
+  // Account-menu toggle and search icon render as outline-primary/icon-primary
+  // Paragon components; their global colors are a dark amber tuned for
+  // contrast against a white background, which reads poorly against this
+  // teal bar - use the brighter base amber here instead.
   .btn-outline-primary {
-    border-color: var(--pgn-color-white, $white);
+    color: #FFB400;
+    border-color: #FFB400;
+  }
+
+  .btn-icon-primary {
+    color: #FFB400;
   }
 
   .logo {
@@ -26,6 +35,10 @@ $white: #FFFFFF;
       display: block;
       height: 3.75rem !important;
       width: auto;
+      // No separate white logo asset is wired up for Studio (unlike the
+      // learner header, which swaps between two images) - invert the
+      // existing logo to render it white against the teal bar instead.
+      filter: brightness(0) invert(1);
     }
   }
 
